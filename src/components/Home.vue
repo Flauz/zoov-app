@@ -1,6 +1,6 @@
 <template>
     <v-card
-        color="blue-grey lighten-5"
+        color="grey lighten-5"
         style="align-items: center;"
         class="mx-auto overflow-hidden"
         height="100%"
@@ -33,7 +33,7 @@
       </v-container>
 
       <v-navigation-drawer app
-          style="z-index: 100; height: 24vh"
+          style="z-index: 100;"
           v-model="drawer"
           absolute
           bottom
