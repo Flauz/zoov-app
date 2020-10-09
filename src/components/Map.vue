@@ -1,6 +1,6 @@
 <template>
 
-  <div style="height: 500px; width: 100% ; margin-top: 20px">
+  <div style="height: 500px; width: 95%; margin: auto ; margin-top: 20px">
     <div style="margin-bottom: 20px" >
 
       <v-btn @click="showMap = !showMap">
@@ -12,7 +12,7 @@
         :zoom="zoom"
         :center="center"
         :options="mapOptions"
-        style="height: 100%"
+        style="height: 100%; z-index: 0"
         @update:center="centerUpdate"
         @update:zoom="zoomUpdate"
     >
@@ -132,10 +132,6 @@ export default {
           this.bikes = response.data
           console.log("bleble: ", this.bikes)
         })
-
-
-
-
   },
 };
 </script>

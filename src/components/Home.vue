@@ -31,8 +31,15 @@
         </v-btn>
       </v-app-bar>
 
-      <v-navigation-drawer
+      <div style="margin-top: 10px;">
+        <v-img style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" width="50%"/>
+      </div>
+      <div>
+        <Map/>
+      </div>
 
+      <v-navigation-drawer
+          style="z-index: 100"
           v-model="drawer"
           absolute
           bottom
@@ -65,20 +72,9 @@
         </v-list>
       </v-navigation-drawer>
 
-      <div style="margin-top: 10px;">
-        <v-img style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" width="50%"/>
-      </div>
-      <div>
-        <Map/>
-
-      </div>
-
       <v-card-text>
         The navigation drawer will appear from the bottom on smaller size screens.
       </v-card-text>
-    </v-card>
-    <v-card outlined elevation="3" height="97vh" width="100%" style="margin: auto" >
-
     </v-card>
   </v-container>
 </template>

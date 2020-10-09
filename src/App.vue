@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-main>
       <Home/>
     </v-main>
@@ -22,3 +22,10 @@ export default {
   }),
 };
 </script>
+<style lang="scss">
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+
+</style>
