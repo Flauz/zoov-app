@@ -25,9 +25,9 @@
         </v-btn>
       </v-app-bar>
 
-      <v-container class="pt-10" style="height: 100%">
+      <v-container class="pt-10" style="height: 90%">
         <div class="pb-8">
-          <v-img  style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" width="50%"/>
+          <v-img  style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" width="40%"/>
         </div>
         <Map/>
       </v-container>
