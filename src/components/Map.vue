@@ -1,6 +1,6 @@
 <template>
 
-  <div style="height: 500px; width: 95%; margin: auto ; margin-top: 20px">
+  <div style="height: 500px; width: 100%; margin: auto ; margin-top: 20px">
 
     <l-map
         v-if="showMap"
