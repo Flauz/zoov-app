@@ -31,23 +31,24 @@
             style="width: auto"
         />
         <l-popup>
-          <div style="margin: auto">
-            <div style="height: 6vh; display: flex; justify-content: space-around; align-items: center" >
-              <h3 v-if="1 === bike.service_status">Disponible</h3>
+          <div>
+            <div style="height: 6vh; display: flex; align-items: center; justify-content: space-around"  class="pa-4 grey lighten-4 text-no-wrap rounded-pill">
+
+              <h3 class="ml-4" v-if="1 === bike.service_status">Disponible</h3>
               <h3 v-if="2 === bike.service_status">Réservé</h3>
               <h3 v-if="3 === bike.service_status">Utilisé</h3>
               <p>
-              <v-img width="50%" :src="1 === bike.service_status ? iconFree : 2 === bike.service_status ? iconBooked : iconUse " alt="img"/>
+              <v-img width="50%" class="ml-2" :src="1 === bike.service_status ? iconFree : 2 === bike.service_status ? iconBooked : iconUse " alt="img"/>
               </p>
             </div>
-            <div class="mb-3" style="height: 6vh; display: flex; justify-content: space-between; align-items: center" >
+            <div style="height: 6vh; display: flex; align-items: center; justify-content: space-around" class="mt-1 mb-4 pa-4 grey lighten-4 text-no-wrap rounded-pill"  >
               <h3>
-                Batterie :
+                Batterie:
               </h3>
-              <p style="margin: auto; display: flex; align-items: center ">
-                {{bike.battery_level}}%
-                <v-img width="5%" src="https://img.icons8.com/color/28/000000/high-battery--v1.png"/>
-              </p>
+              <div class="ml-2" style="display: flex; align-items: center ">
+              <h3>{{bike.battery_level}}%</h3>
+                <v-img width="4%" src="https://img.icons8.com/color/28/000000/high-battery--v1.png"/>
+              </div>
             </div>
             <v-divider class="pa-3"></v-divider>
             <div style="display: flex; justify-content: center; height: 20px">
