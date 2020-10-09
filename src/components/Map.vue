@@ -1,12 +1,7 @@
 <template>
 
   <div style="height: 500px; width: 95%; margin: auto ; margin-top: 20px">
-    <div style="margin-bottom: 20px" >
 
-      <v-btn @click="showMap = !showMap">
-        Toggle map
-      </v-btn>
-    </div>
     <l-map
         v-if="showMap"
         :zoom="zoom"
@@ -33,22 +28,26 @@
             :icon-size="dynamicSize"
             :icon-anchor="dynamicAnchor"
             icon-url="https://img.icons8.com/ios-filled/50/000000/electric-bike.png"
+            style="width: auto"
         />
         <l-popup>
-          <div>
-            <div style="display: flex; justify-content: space-around; align-items: center" >
-              <h3 v-if="1 === bike.service_status">DISPONIBLE</h3>
-              <h3 v-if="2 === bike.service_status">RESERVE</h3>
-              <h3 v-if="3 === bike.service_status">UTILISE</h3>
+          <div style="margin: auto">
+            <div style="height: 6vh; display: flex; justify-content: space-around; align-items: center" >
+              <h3 v-if="1 === bike.service_status">Disponible</h3>
+              <h3 v-if="2 === bike.service_status">Réservé</h3>
+              <h3 v-if="3 === bike.service_status">Utilisé</h3>
               <p>
-              <v-img width="30" :src="1 === bike.service_status ? iconFree : 2 === bike.service_status ? iconBooked : iconUse " alt="img"/>
+              <v-img width="50%" :src="1 === bike.service_status ? iconFree : 2 === bike.service_status ? iconBooked : iconUse " alt="img"/>
               </p>
             </div>
-            <div class="mb-3" style="display: flex; justify-content: space-around; align-items: center" >
-              <div class="subtitle-2" style="text-align: center">
-                BATTERIE :
-              </div>
-              <div class="subtitle-2">{{bike.battery_level}}%</div>
+            <div class="mb-3" style="height: 6vh; display: flex; justify-content: space-between; align-items: center" >
+              <h3>
+                Batterie :
+              </h3>
+              <p style="margin: auto; display: flex; align-items: center ">
+                {{bike.battery_level}}%
+                <v-img width="5%" src="https://img.icons8.com/color/28/000000/high-battery--v1.png"/>
+              </p>
             </div>
             <v-divider class="pa-3"></v-divider>
             <div style="display: flex; justify-content: center; height: 20px">
