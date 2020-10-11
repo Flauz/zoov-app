@@ -111,15 +111,15 @@ export default {
     height() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs': 
-          return 450
+          return 480
         case 'sm': 
-          return 350
+          return 550
         case 'md': 
-          return 350
+          return 550
         case 'lg': 
-          return 320
+          return 550
         case 'xl': 
-          return 600
+          return 500
         default: return null
         }
       
