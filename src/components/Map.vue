@@ -1,6 +1,6 @@
 <template>
 
-  <div style="height: 500px; width: 100%; margin: auto ; margin-top: 20px">
+  <v-card :height="height" style="width: 90%; margin: auto ; margin-top: 20px">
 
     <l-map
         v-if="showMap"
@@ -35,8 +35,8 @@
             <div style="height: 6vh; display: flex; align-items: center; justify-content: space-around"  class="pa-4 grey lighten-4 text-no-wrap rounded-pill">
 
               <h3 class="ml-4" v-if="1 === bike.service_status">Disponible</h3>
-              <h3 v-if="2 === bike.service_status">Réservé</h3>
-              <h3 v-if="3 === bike.service_status">Utilisé</h3>
+              <h3 class="ml-4" v-if="2 === bike.service_status">Réservé</h3>
+              <h3 class="ml-4" v-if="3 === bike.service_status">Utilisé</h3>
               <p>
               <v-img width="50%" class="ml-2" :src="1 === bike.service_status ? iconFree : 2 === bike.service_status ? iconBooked : iconUse " alt="img"/>
               </p>
@@ -62,7 +62,7 @@
       </l-marker>
 
     </l-map>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -108,6 +108,22 @@ export default {
     dynamicAnchor() {
       return [this.iconSize / 2, this.iconSize * 2.15];
     },
+    height() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': 
+          return 480
+        case 'sm': 
+          return 550
+        case 'md': 
+          return 550
+        case 'lg': 
+          return 550
+        case 'xl': 
+          return 500
+        default: return null
+        }
+      
+      },
 
   },
   methods: {
@@ -126,6 +142,7 @@ export default {
 
   },
   mounted() {
+    console.log('HERE =', this.$vuetify.breakpoint)
     axios
         .get('https://jsonbox.io/box_378cb7f9a98c0db8c195')
         .then(response => {
