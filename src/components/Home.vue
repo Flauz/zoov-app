@@ -25,9 +25,9 @@
         </v-btn>
       </v-app-bar>
 
-      <v-container class="pt-10" style="height: 90%">
-        <div class="pb-8">
-          <v-img  style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" width="40%"/>
+      <v-container class="pt-6" style="height: 90%">
+        <div class="pb-5">
+          <v-img width="40%" style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" />
         </div>
         <Map/>
       </v-container>
@@ -69,7 +69,30 @@
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-    </v-card>
+      <v-bottom-navigation app
+        :value="value"
+        color="primary"
+        grow
+      >
+      <v-btn>
+        <span>Recents</span>
+
+        <v-icon>mdi-history</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>scanner</span>
+
+        <v-icon>mdi-barcode-scan</v-icon>
+      </v-btn>
+
+      <v-btn>
+        <span>Nearby</span>
+
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+  </v-card>
 </template>
 <script>
 import Map from './Map'
@@ -84,13 +107,31 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
+    value: 1
   }),
-
+  
   watch: {
     group () {
       this.drawer = false
     },
   },
-
+  computed: {
+    height() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': 
+          return 200
+        case 'sm': 
+          return 200
+        case 'md': 
+          return 400
+        case 'lg': 
+          return 600
+        case 'xl': 
+          return 800
+        default: return null
+        }
+      
+      },
+  }
 }
 </script>
