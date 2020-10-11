@@ -25,7 +25,7 @@
         </v-btn>
       </v-app-bar>
 
-      <v-container class="pt-6" style="height: 90%">
+      <v-container class="pt-6" style="height: 65vh">
         <div class="pb-5">
           <v-img width="40%" style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" />
         </div>
