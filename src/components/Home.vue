@@ -1,7 +1,7 @@
 <template>
     <v-card
         color="grey lighten-5"
-        style="align-items: center;"
+        style="align-items: center; overflow-y: hidden;"
         class="mx-auto overflow-hidden"
         height="100%"
         width="100%"
