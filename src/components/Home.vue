@@ -1,7 +1,7 @@
 <template>
     <v-card
         color="grey lighten-5"
-        style="align-items: center; overflow-y: hidden;"
+        style="align-items: center;"
         class="mx-auto overflow-hidden"
         height="100%"
         width="100%"
@@ -25,9 +25,9 @@
         </v-btn>
       </v-app-bar>
 
-      <v-container class="pt-6" style="height: 65vh">
+      <v-container class="pt-6" style="height: 100%">
         <div class="pb-5">
-          <v-img width="40%" style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" />
+          <v-img :width="width" style="margin: auto" src="https://www.zoov.eu/static/images/logos/zoov-logo-blue.svg" alt="" />
         </div>
         <Map/>
       </v-container>
@@ -130,8 +130,22 @@ export default {
           return 800
         default: return null
         }
-      
       },
+      width() {
+        switch (this.$vuetify.breakpoint.name){
+          case 'xs': 
+          return 200
+        case 'sm': 
+          return 200
+        case 'md': 
+          return 300
+        case 'lg': 
+          return 300
+        case 'xl': 
+          return 800
+        default: return null
+        }
+      }
   }
 }
 </script>
