@@ -1,6 +1,6 @@
 <template>
 
-  <v-card :height="height" style="width: 90%; margin: auto ; margin-top: 20px">
+  <v-card :height="height" style="width: 90%; margin: auto ; margin-top: 20px; overflow: hidden">
 
     <l-map
         v-if="showMap"
@@ -52,7 +52,7 @@
             </div>
             <v-divider class="pa-3"></v-divider>
             <div style="display: flex; justify-content: center; height: 20px">
-              <v-btn x-small>réserve moi</v-btn>
+              <v-btn v-on:click="bookBike(bike.service_status)" x-small>réserve moi</v-btn>
             </div>
             <p>
               numéro de série : {{bike.serial_number}}
@@ -113,11 +113,11 @@ export default {
         case 'xs': 
           return 400
         case 'sm': 
-          return 550
+          return 320
         case 'md': 
-          return 550
+          return 450
         case 'lg': 
-          return 550
+          return 450
         case 'xl': 
           return 500
         default: return null
@@ -139,6 +139,9 @@ export default {
     showLongText() {
       this.showParagraph = !this.showParagraph;
     },
+    bookBike: (e) => {
+      console.log(e)
+    }
 
   },
   mounted() {
