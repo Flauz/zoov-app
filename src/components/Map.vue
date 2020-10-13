@@ -223,10 +223,12 @@ export default {
           };
         }
       };
-      axios.put(
-        `https://jsonbox.io/box_46b174b2da44adfa5061/${id}`,
-        changeStatus(serviceStatus)
-      );
+      axios
+        .put(
+          `https://jsonbox.io/box_46b174b2da44adfa5061/${id}`,
+          changeStatus(serviceStatus)
+        )
+        .then(() => location.reload());
     },
   },
   mounted() {
