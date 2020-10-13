@@ -53,6 +53,7 @@
             <v-divider class="pa-3"></v-divider>
             <div style="display: flex; justify-content: center; height: 20px">
               <v-btn v-on:click="bookBike(bike.service_status)" x-small>réserve moi</v-btn>
+              <ButtonBooke />
             </div>
             <p>
               numéro de série : {{bike.serial_number}}
@@ -69,6 +70,7 @@
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LMarker, LPopup, LIcon } from "vue2-leaflet";
 import axios from "axios"
+import ButtonBooke from "./ButtonBooke"
 
 export default {
   name: "Example",
@@ -77,7 +79,8 @@ export default {
     LTileLayer,
     LMarker,
     LPopup,
-    LIcon
+    LIcon,
+    ButtonBooke,
 
   },
   data: () => {
